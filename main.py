@@ -16,11 +16,11 @@ try:
     current_price = int(soup.select_one(".a-price-whole").getText().split(".")[0].replace(",",""))
     product_name = soup.select_one("#productTitle").getText().strip()
 except :
-    current_price = 0
+    current_price = 2000
     print("Amazon Blocked request")
     print(response.text)
 
-if current_price>desired_price:
+if current_price<desired_price:
     print("price alert sequence activated")
     import smtplib
     my_email = "sidr272002@gmail.com"
